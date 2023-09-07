@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import Providers from "./providers";
 
 export const metadata = {
-  title: "Car Hub",
+  title: "Carmela",
   description: "Discover world's best car showcase application",
 };
 

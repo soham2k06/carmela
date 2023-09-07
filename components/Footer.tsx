@@ -9,14 +9,14 @@ function Footer() {
       <div className="flex max-md:flex-col flex-wrap justify-between gap-5 sm:px-16 px-6 py-10">
         <div className="flex flex-col justify-start items-start gap-6">
           <Image
-            src="/logo.svg"
+            src="/logo.png"
             alt="logo"
-            width={118}
+            width={168}
             height={18}
             className="object-contain"
           />
           <p className="text-base text-gray-700">
-            Carhub 2023 <br /> All right reserved &copy;
+            Carmela 2023 <br /> All right reserved &copy;
           </p>
         </div>
         <ul className="flex-1 w-full flex md:justify-end flex-wrap max-md:mt-10 gap-20">
@@ -41,7 +41,7 @@ function Footer() {
       </div>
 
       <div className="flex justify-between items-center flex-wrap mt-10 border-t border-gray-100 sm:px-16 px-6 py-10">
-        <p>@2023 Carhub. All Rights Reserved</p>
+        <p>@{new Date().getFullYear()} Carmela. All Rights Reserved</p>
         <div className="flex-1 flex sm:justify-end justify-center max-sm:mt-4 gap-10">
           <Link href="/" className="text-gray-500">
             Privacy Policy

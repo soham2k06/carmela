@@ -10,10 +10,10 @@ function NavBar() {
       <nav className="max-w-[1440px] mx-auto flex justify-between items-center sm:px-16 px-6 py-4 bg-transparent">
         <Link href="/" className="flex justify-center items-center">
           <Image
-            src="/logo.svg"
+            src="/logo.png"
             alt="logo"
-            width={118}
-            height={18}
+            width={168}
+            height={0}
             className="object-contain"
           />
         </Link>
@@ -25,7 +25,7 @@ function NavBar() {
           placement="auto"
           closeOnClick={false}
         >
-          <Button className="xl:text-blue-50 text-blue-700 opacity-50 cursor-not-allowed">
+          <Button className="xl:text-blue-50 text-blue-700 opacity-50 cursor-default">
             Sign In
           </Button>
         </Tooltip>
