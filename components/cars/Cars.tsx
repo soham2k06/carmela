@@ -23,8 +23,10 @@ function Cars({ searchParams }: { searchParams: any }) {
     model: searchParams.model || "",
   });
 
+  const errMessage = (error as any)?.message;
+
   if (error)
-    toast.error(error.message, {
+    toast.error(errMessage, {
       position: "top-right",
       autoClose: 5000,
       hideProgressBar: false,
@@ -62,12 +64,12 @@ function Cars({ searchParams }: { searchParams: any }) {
       )}
       {cars && cars?.length < 1 && (
         <Error
-          message={error?.message}
+          message={errMessage}
           customizedMsg="Car manufacturer and model didn't match"
           refetch={refetch}
         />
       )}
-      {!cars && error && <Error refetch={refetch} message={error?.message} />}
+      {!cars && error && <Error refetch={refetch} message={errMessage} />}
     </section>
   );
 }
