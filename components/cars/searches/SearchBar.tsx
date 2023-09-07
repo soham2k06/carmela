@@ -6,6 +6,7 @@ import SearchManufacturer from "./SearchManufacturer";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useCars } from "@/api/useCars";
+import { toast } from "react-toastify";
 
 function SearchButton({
   otherClasses,
@@ -45,7 +46,8 @@ function SearchBar() {
     e.preventDefault();
 
     if (manufacturer.trim() === "" && model.trim() === "") {
-      return alert("Please provide some input");
+      toast.info("Please provide some input");
+      return;
     }
 
     updateSearchParams(model.toLowerCase(), manufacturer.toLowerCase());

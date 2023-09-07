@@ -23,12 +23,11 @@ function CarCard({ car }: CarCardProps) {
   const { city_mpg, year, make, model, transmission, drive } = car;
   const carName = make + " " + model;
   const carRent = calculateCarRent(city_mpg, year);
-
   return (
     <ul className="flex flex-col p-6 justify-center items-start text-black-100 bg-primary-blue-100 hover:bg-white hover:shadow-md rounded-3xl group">
       <div className="w-full flex justify-between items-start gap-2">
         <h2 className="text-2xl leading-7 font-bold capitalize">
-          {carName.length < maxCarNameLength
+          {carName.length <= maxCarNameLength
             ? carName
             : carName.substring(0, maxCarNameLength) + "..."}
         </h2>
