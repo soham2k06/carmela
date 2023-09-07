@@ -11,7 +11,6 @@ function Error({
   customizedMsg?: string;
   refetch: any;
 }) {
-  console.log(refetch);
   return (
     <div className="flex justify-center items-center flex-col gap-2 bg-primary-blue-100 w-fit mx-auto px-8 py-4 rounded-lg">
       <h2 className="text-red-500 text-xl font-bold">Oops, no results</h2>
