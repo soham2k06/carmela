@@ -13,7 +13,7 @@ export function useCars(filters: FilterProps) {
     queryFn: () => getCars(filters),
     queryKey: ["cars", filters],
   });
-
+  
   if (error) console.error(error);
   return { cars, isLoading, error, refetch };
 }
