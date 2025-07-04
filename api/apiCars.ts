@@ -7,9 +7,9 @@ const headers = {
 const BASE_URL = "https://api.api-ninjas.com/v1/cars";
 
 export async function getCars(filters: FilterProps) {
-  const { fuel, limit, manufacturer, model, year } = filters;
+  const { fuel, manufacturer, model, year } = filters;
   const res = await fetch(
-    `${BASE_URL}?make=${manufacturer}&year=${year}&model=${model}&limit=${limit}&fuel_type=${fuel}`,
+    `${BASE_URL}?make=${manufacturer}&year=${year}&model=${model}&fuel_type=${fuel}`,
     { headers }
   );
 

@@ -20,9 +20,9 @@ function CarCard({ car }: CarCardProps) {
   const [isLoading, setIsLoading] = useState(true);
   const maxCarNameLength = 17;
 
-  const { city_mpg, year, make, model, transmission, drive } = car;
+  const { year, make, model, transmission, drive } = car;
   const carName = make + " " + model;
-  const carRent = calculateCarRent(city_mpg, year);
+
   return (
     <ul className="flex flex-col p-6 justify-center items-start text-black-100 bg-primary-blue-100 hover:bg-white hover:shadow-md rounded-3xl group">
       <div className="w-full flex justify-between items-start gap-2">
@@ -32,14 +32,6 @@ function CarCard({ car }: CarCardProps) {
             : carName.substring(0, maxCarNameLength) + "..."}
         </h2>
       </div>
-
-      <p className="flex mt-6  text-3xl leading-9 font-extrabold">
-        <span className="self-start text-sm leading-4 font-semibold">₹</span>
-        {carRent}
-        <span className="self-end text-[14px] leading-[17px] font-medium">
-          /day
-        </span>
-      </p>
 
       <div className="relative w-full h-40 my-3 object-contain">
         <ImageSkeleton isLoading={isLoading} />
@@ -60,7 +52,6 @@ function CarCard({ car }: CarCardProps) {
             label={transmission === "a" ? "Automatic" : "Manual"}
           />
           <CarFeature img="tire" label={drive.toUpperCase()} />
-          <CarFeature img="gas" label={`${city_mpg} MPG`} />
         </div>
 
         <div className="hidden group-hover:flex absolute bottom-0 w-full z-10">

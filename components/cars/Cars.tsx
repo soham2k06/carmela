@@ -19,7 +19,6 @@ function Cars({ searchParams }: { searchParams: any }) {
     manufacturer: searchParams.manufacturer || "",
     year: searchParams.year || 2023,
     fuel: searchParams.fuel || "",
-    limit: searchParams.limit || 10,
     model: searchParams.model || "",
   });
 
@@ -56,12 +55,7 @@ function Cars({ searchParams }: { searchParams: any }) {
           cars?.map((car: any, i: any) => <CarCard key={i} car={car} />)
         )}
       </div>
-      {!isLoadingCars && cars?.length >= 1 && (
-        <ShowMore
-          pageNumber={(searchParams.limit || 10) / 10}
-          isNext={(searchParams.limit || 10) > cars?.length}
-        />
-      )}
+
       {cars && cars?.length < 1 && (
         <Error
           message={errMessage}

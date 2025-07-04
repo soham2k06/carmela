@@ -4,6 +4,7 @@ import Link from "next/link";
 import { footerLinks } from "@/constants";
 
 function Footer() {
+  const currentYear = new Date().getFullYear();
   return (
     <footer className="flex flex-col text-black-100 border-t border-gray-100">
       <div className="flex max-md:flex-col flex-wrap justify-between gap-5 sm:px-16 px-6 py-10">
@@ -16,7 +17,7 @@ function Footer() {
             className="object-contain"
           />
           <p className="text-base text-gray-700">
-            Carmela 2023 <br /> All right reserved &copy;
+            Carmela {currentYear} <br /> All right reserved &copy;
           </p>
         </div>
         <ul className="flex-1 w-full flex md:justify-end flex-wrap max-md:mt-10 gap-20">
